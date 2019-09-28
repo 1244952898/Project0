@@ -23,7 +23,8 @@ namespace Project0
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddAutoMapper();
+            //services.AddAutoMapper(typeof(Startup));
+            var c = new ConfigurationBuilder();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
