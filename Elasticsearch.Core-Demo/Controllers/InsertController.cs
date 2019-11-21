@@ -38,5 +38,15 @@ namespace Elasticsearch.Core_Demo.Controllers
             };
             var ndexResponse = _client.IndexDocument(person);
         }
+
+        public void AddPerson2()
+        {
+            var person = new Person
+            {
+                Id = 1,
+                FirstName = "Yu",
+                LastName = "Zhuang"
+            };
+        }
     }
 }

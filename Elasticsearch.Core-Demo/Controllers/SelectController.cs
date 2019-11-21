@@ -51,5 +51,21 @@ namespace Elasticsearch.Core_Demo.Controllers
             );
             var a = searchResponse;
         }
+
+        public async Task HLTest()
+        {
+            string queryString = "second blog";
+            var filters = new List<Func<QueryContainerDescriptor<WebsiteModel>, QueryContainer>>();
+            filters.Add(fb=>fb.Bool(
+                fm=>fm.Must(
+                    fmt=>fmt.Match(
+                        ff=>ff.Field(
+                            f=>f.Text
+                            )
+                        .Query("")
+                        )
+                    )
+                ));
+        }
     }
 }
